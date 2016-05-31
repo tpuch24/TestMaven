@@ -5,13 +5,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class objectDAO {
+public class ObjectDAO {
 
 	ResultSet resultSet;
 	ConnectMyBDD myBDD;
 	Connection connexion;
 	
-	public objectDAO() {
+	public ObjectDAO() {
 		// TODO Auto-generated constructor stub
 	}
 

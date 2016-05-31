@@ -16,7 +16,7 @@ import fr.thierry.testjdbc.Customer;
  *
  *@
  */
-public class CustomerDAO extends objectDAO{
+public class CustomerDAO extends ObjectDAO{
 	
 	public CustomerDAO() {
 		// TODO Auto-generated constructor stub

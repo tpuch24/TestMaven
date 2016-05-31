@@ -37,4 +37,15 @@ public class ConnectMyBDD {
 
 	}
 	
+	public void closeInstance(){
+		if (myConnection != null){
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
 }

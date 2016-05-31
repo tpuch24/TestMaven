@@ -47,4 +47,26 @@ public class AccountTest {
 		assertNotNull(account.getCustomer());
 	}
 	
+	@Test
+	public void isValidTransfert(){
+		Account accADebit = new Account(1, 1000.0, new Customer("PUCH", "Thierry"));
+		Account accACredit = new Account(1, 1000.0, new Customer("BONNET", "Jerome"));
+		double amount=200.0;
+		
+		assertTrue((accADebit.getBalance() > amount));
+		
+	}
+	
+	@Test
+	public void isNotValidTransfertByAmount(){
+		Account accADebit = new Account(1, 1000.0, new Customer("PUCH", "Thierry"));
+		Account accACredit = new Account(1, 1000.0, new Customer("BONNET", "Jerome"));
+		double amount=1200.0;
+		
+		assertNotNull(accADebit);
+		assertNotNull(accACredit);
+
+		assertFalse((accADebit.getBalance() > amount));
+	}
+	
 }

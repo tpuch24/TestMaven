@@ -15,7 +15,7 @@ import fr.thierry.testjdbc.Account;
  *
  *@
  */
-public class AccountDAO extends objectDAO{
+public class AccountDAO extends ObjectDAO{
 
 	
 	public AccountDAO() {
@@ -110,6 +110,36 @@ public class AccountDAO extends objectDAO{
 	
 	public boolean muteAmount(Account debit, Account credit, double amount){
 		
+		if ((debit==null) || (credit==null)) return false;	
+		if (amount > debit.getBalance()) return false;
+		
+		debit.debitAccount(amount);
+		credit.creditAccount(amount);
+		
+		//Ininterrupt mode (Transaction)
+		try {
+			connexion.setAutoCommit(false);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if ((updateAccount(debit)) && (updateAccount(credit))){
+			try {
+				connexion.commit();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}			
+		}
+		else {
+			try {
+				connexion.rollback();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		return true;
 	}

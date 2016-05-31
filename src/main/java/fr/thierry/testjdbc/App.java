@@ -4,6 +4,7 @@ import java.util.List;
 
 import fr.thierry.testjdbc.jdbc.AccountDAO;
 import fr.thierry.testjdbc.jdbc.BankDAO;
+import fr.thierry.testjdbc.jdbc.ConnectMyBDD;
 import fr.thierry.testjdbc.jdbc.CustomerDAO;
 
 /**
@@ -40,8 +41,9 @@ public class App {
 		Customer aCrediter = customerDAO.getACustomer("BONNET", "Jerome");
 		Double montant = 200.0;
 
-		
-	
+		//Close connection
+		ConnectMyBDD myBDD = ConnectMyBDD.getInstance();
+		myBDD.closeInstance();
 	}
 
 }

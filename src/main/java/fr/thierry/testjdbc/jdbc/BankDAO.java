@@ -15,7 +15,7 @@ import fr.thierry.testjdbc.Bank;
  *
  *@
  */
-public class BankDAO extends objectDAO {
+public class BankDAO extends ObjectDAO {
 	
 	public BankDAO(){
 		// TODO Auto-generated constructor stub
