@@ -14,7 +14,6 @@ import fr.thierry.testjdbc.Customer;
  *  DAO for Customer table in DB
  * @author Thierry
  *
- *@
  */
 public class CustomerDAO extends ObjectDAO{
 	

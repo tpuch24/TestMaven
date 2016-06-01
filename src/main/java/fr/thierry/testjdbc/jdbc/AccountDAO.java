@@ -13,7 +13,6 @@ import fr.thierry.testjdbc.Account;
  *  DAO for account table in DB
  * @author Thierry
  *
- *@
  */
 public class AccountDAO extends ObjectDAO{
 

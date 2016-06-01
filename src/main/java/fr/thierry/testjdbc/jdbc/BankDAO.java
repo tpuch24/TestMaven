@@ -13,7 +13,6 @@ import fr.thierry.testjdbc.Bank;
  *  DAO for bank table in DB
  * @author Thierry
  *
- *@
  */
 public class BankDAO extends ObjectDAO {
 	
