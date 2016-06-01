@@ -51,7 +51,7 @@ public class AccountTest {
 	public void isValidTransfert(){
 		Account accADebit = new Account(1, 1000.0, new Customer("PUCH", "Thierry"));
 		Account accACredit = new Account(1, 1000.0, new Customer("BONNET", "Jerome"));
-		double amount=200.0;
+		double amount=180.0;
 		
 		assertTrue((accADebit.getBalance() > amount));
 		
