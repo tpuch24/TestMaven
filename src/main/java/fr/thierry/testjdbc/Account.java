@@ -70,7 +70,7 @@ public class Account {
 	/**
 	 * setBalance for creditl or debit operations
 	 * @param amount
-	 * @param addAmount - true => credit / false => debit
+	 * @param addAmount - true = credit / false = debit
 	 * @return
 	 */
 	public double setBalance(double amount, boolean addAmount){

@@ -12,7 +12,7 @@ public class ObjectDAO {
 	Connection connexion;
 	
 	public ObjectDAO() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	protected boolean getResultset(String stSQL){
@@ -24,7 +24,6 @@ public class ObjectDAO {
 			statement = connexion.createStatement();
 			resultSet = statement.executeQuery(stSQL);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
@@ -40,7 +39,6 @@ public class ObjectDAO {
 			statement = connexion.createStatement();
 			int value = statement.executeUpdate(stSQL);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}

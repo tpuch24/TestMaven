@@ -38,7 +38,6 @@ public class AccountDAO extends ObjectDAO{
 					account= new Account(resultSet.getInt("id"),resultSet.getDouble("balance"), customerDAO.getACustomer(resultSet.getString("lastname"), resultSet.getString("firstname")));
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -47,7 +46,7 @@ public class AccountDAO extends ObjectDAO{
 	
 	/**
 	 * Insert an account in DB table
-	 * @return 
+	 * @return true if ok
 	 */
 	public boolean insertAccount(Account account){
 		String stSQL="INSERT INTO account (iban, balance, firstname, lastname)";
@@ -60,7 +59,7 @@ public class AccountDAO extends ObjectDAO{
 	
 	/**
 	 * update an account in DB table
-	 * @return 
+	 * @return true if ok
 	 */
 	public boolean updateAccount(Account account){
 		String stSQL="UPDATE account SET";
@@ -75,7 +74,7 @@ public class AccountDAO extends ObjectDAO{
 	
 	/**
 	 * Delete an account in DB table
-	 * @return 
+	 * @return true if ok
 	 */
 	public boolean deleteAccount(Account account){
 		String stSQL="DELETE FROM where id= "+account.getId();
@@ -101,7 +100,6 @@ public class AccountDAO extends ObjectDAO{
 				myList.add(new Account(resultSet.getInt("id"), resultSet.getDouble("balance"), customerDAO.getACustomer(resultSet.getString("lastname"), resultSet.getString("firstname"))));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return myList;
@@ -119,7 +117,6 @@ public class AccountDAO extends ObjectDAO{
 		try {
 			connexion.setAutoCommit(false);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -127,7 +124,6 @@ public class AccountDAO extends ObjectDAO{
 			try {
 				connexion.commit();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}			
 		}
@@ -135,7 +131,6 @@ public class AccountDAO extends ObjectDAO{
 			try {
 				connexion.rollback();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
