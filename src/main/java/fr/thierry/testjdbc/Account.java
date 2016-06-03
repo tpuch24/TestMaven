@@ -1,5 +1,5 @@
 package fr.thierry.testjdbc;
-import java.util.List;
+
 
 /**
  * 
@@ -26,7 +26,7 @@ public class Account {
 	
 	public void account(int id, double balance, Customer customer) {
 		this.refAccountNumber = RefAccountNumber.getInstance();
-		//this.id = refAccountNumber.getNewId();
+
 		this.id = id;
 		this.balance = balance;
 		this.customer = customer;
@@ -90,6 +90,7 @@ public class Account {
     	return this.setBalance(amount, false);
     }
     
+    @Override
     public String toString(){
     	return "Number :" +this.getId()+" - Balance : "+this.getBalance()
     	+" - Owner :"+ this.getCustomer().toString();
